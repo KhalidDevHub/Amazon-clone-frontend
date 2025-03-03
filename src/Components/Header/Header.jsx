@@ -16,7 +16,7 @@ const Header = () => {
           {/* logo section*/}
           <div className={classes.logo_container}>
             <Link to="/">
-              <img src={Logo} alt="amazon logo" />
+              <img src={Logo} alt="Amazon logo" />
             </Link>
 
             {/* delivery */}
@@ -34,17 +34,17 @@ const Header = () => {
           </div>
           <div className={classes.search}>
             {/* search */}
-            <select name="" id="">
+            <select name="" id="search-category">
               <option value="">All</option>
             </select>
-            <input type="text" name="" id="" placeholder="Search Amazon" />
+            <input type="text" name="" id="search-input" placeholder="Search Amazon" />
             {/* icon */}
             <BsSearch size={39} />
           </div>
           <div className={classes.order_container}>
             <Link to="/orders" className={classes.language}>
-              <img src={FlagUSA} alt="usa flag" />
-              <select name="" id="">
+              <img src={FlagUSA} alt="USA flag" />
+              <select name="" id="language-select">
                 <option value="">EN</option>
               </select>
             </Link>

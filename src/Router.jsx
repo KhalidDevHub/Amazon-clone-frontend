@@ -6,6 +6,8 @@ import Payments from './pages/Payments/Payments'
 import Orders from './pages/Orders/Orders'
 import Cart from './pages/Cart/Cart'
 import Results from './pages/Results/Results'
+import ProductDetail from './pages/ProductDetail/ProductDetail';
+
 const Routing = () => {
   return (
     <Router>
@@ -15,7 +17,8 @@ const Routing = () => {
         <Route path="/payments" element={<Payments />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/category/:categoryName" element={<Results />} />
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );
