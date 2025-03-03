@@ -44,8 +44,7 @@
   align-items: center;
   border-radius: 10px;
   overflow: hidden;
-  width: 60%; /* Adjusted width for better alignment */
-  max-width: 600px; /* Added max-width for responsiveness */
+  width: 100%; 
   flex: 1;
 }
 .search select,
