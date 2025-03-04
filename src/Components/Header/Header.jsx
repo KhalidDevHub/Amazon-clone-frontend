@@ -1,3 +1,4 @@
+import React, {useContext} from "react";
 import classes from "./header.module.css";
 import Logo from "../../assets/images/amazon_PNG11.png";
 import FlagUSA from "../../assets/images/Flag.png";
@@ -6,9 +7,10 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
-import React from "react";
-
+import { DateContext } from "../DateProvider/DateProvider";
 const Header = () => {
+  const [{basket}, dispatch] = useContext(DateContext);
+  
   return (
     <section className={classes.fixed}>
       <section>
@@ -37,7 +39,12 @@ const Header = () => {
             <select name="" id="search-category">
               <option value="">All</option>
             </select>
-            <input type="text" name="" id="search-input" placeholder="Search Amazon" />
+            <input
+              type="text"
+              name=""
+              id="search-input"
+              placeholder="Search Amazon"
+            />
             {/* icon */}
             <BsSearch size={39} />
           </div>
@@ -66,7 +73,7 @@ const Header = () => {
             <Link to="/cart" className={classes.cart}>
               <BiCart size={35} />
               <p>Cart</p>
-              <span>0</span>
+              <span>{basket.length}</span>
             </Link>
           </div>
         </div>
