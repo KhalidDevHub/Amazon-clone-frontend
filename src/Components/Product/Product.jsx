@@ -24,17 +24,20 @@ function Product() {
 
   return (
     <>
-    { isLoading ? (
-        <Loader />) :(
-          <section className={classes.products_container}>
-      {products.map((singleProduct) => (
-        <ProductCard key={singleProduct.id} product={singleProduct} />
-      ))}
-    </section>
-          )
-    }
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <section className={classes.products_container}>
+          {products.map((singleProduct) => (
+            <ProductCard
+              key={singleProduct.id}
+              product={singleProduct}
+              renderAdd={true}
+            />
+          ))}
+        </section>
+      )}
     </>
-    
   );
 }
 
