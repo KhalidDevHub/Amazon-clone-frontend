@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/payment/create", async (req, res) => {
-  const total = req.query.total;
+  const total = parseInt(req.query.total);
   if (total > 0) {
     // console.log("payment recieved",total);
     // res.send(total)
@@ -25,7 +25,9 @@ app.post("/payment/create", async (req, res) => {
       currency: "usd",
     });
     console.log(paymentIntent);
-    res.status(201).json(paymentIntent);
+    res.status(201).json({
+      clientSecret: paymentIntent.client_secret,
+    });
   }else{
     res.status(403).json({
       message:"total must be greater then 0"

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import login_logo from "../../assets/images/newLogo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import classes from "./Auth.module.css";
 import { auth } from "../../utility/firebase";
 import { ClipLoader } from "react-spinners";
@@ -21,6 +21,8 @@ const Auth = () => {
     signUp: false,
   });
   const navigate = useNavigate();
+  const navStateDate = useLocation();
+  // console.log(navStateDate);
 
   const authHandler = async (e) => {
     e.preventDefault();
@@ -36,7 +38,7 @@ const Auth = () => {
             user: userInfo.user,
           });
           setLoading({ ...loading, signIn: false });
-          navigate("/")
+          navigate(navStateDate?.state?.redirect || "/");
         })
         .catch((err) => {
           setLoading({ ...loading, signIn: false });
@@ -52,7 +54,7 @@ const Auth = () => {
             user: userInfo.user,
           });
           setLoading({ ...loading, signUp: false });
-          navigate('/')
+          navigate(navStateDate?.state?.redirect || "/");
         })
         .catch((err) => {
           setLoading({ ...loading, signUp: false });
@@ -69,6 +71,18 @@ const Auth = () => {
       {/* logo in form */}
       <div className={classes.login__container}>
         <h1>Sign-in</h1>
+        {navStateDate?.state?.msg && (
+          <small
+            style={{
+              padding: "5px",
+              textAlign: "center",
+              color: "red",
+              fontWeight: "bold",
+            }}
+          >
+            {navStateDate.state.msg}
+          </small>
+        )}
         <form action="">
           <div>
             <label htmlFor="email">E-mail</label>

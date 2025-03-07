@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import LayOut from "../../Components/LayOut/LayOut";
+import Layout from "../../Components/Layout/Layout";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import classes from "./cart.module.css";
@@ -27,7 +27,7 @@ const Cart = () => {
     });
   };
   return (
-    <LayOut>
+    <Layout>
       <section className={classes.container}>
         <div className={classes.cart_container}>
           <h2>Hello</h2>
@@ -78,7 +78,7 @@ const Cart = () => {
           </div>
         )}
       </section>
-    </LayOut>
+    </Layout>
   );
 };
 

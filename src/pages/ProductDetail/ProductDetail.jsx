@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import LayOut from "../../Components/Layout/Layout";
+import Layout from "../../Components/Layout/Layout";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../Api/endPoint";
@@ -24,7 +24,7 @@ const ProductDetail = () => {
       });
   }, []);
   return (
-    <LayOut>
+    <Layout>
       {isLoading ? (
         <Loader />
       ) : (
@@ -34,7 +34,7 @@ const ProductDetail = () => {
           renderDesc={true}
           renderAdd={true}/>
       )}
-    </LayOut>
+    </Layout>
   );
 };
 
