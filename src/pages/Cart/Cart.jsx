@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Layout from "../../Components/Layout/Layout";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
-import classes from "./cart.module.css";
+import classes from "./Cart.module.css";
 import { DataContext } from "../../Components/DataProvider/DataProvider";
 import ProductCard from "../../Components/Product/ProductCard";
 import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";
